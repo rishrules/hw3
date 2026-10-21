@@ -85,6 +85,24 @@ int main(int argc, char* argv[])
     cout << "Original list: ";
     print(head);
 
+    Node* smaller;
+    Node* larger;
+    llpivot(head, smaller, larger, 8);
+    cout << "Input after llpivot: ";
+    print(head);
+    cout << "Values <= 8: ";
+    print(smaller);
+    cout << "Values > 8: ";
+    print(larger);
+    dealloc(smaller);
+    dealloc(larger);
+
+    Node* filtered = readList(argv[1]);
+    filtered = llfilter(filtered, [](int value) { return value % 2 == 0; });
+    cout << "After removing even values: ";
+    print(filtered);
+    dealloc(filtered);
+
     // Test out your linked list code
 
 
