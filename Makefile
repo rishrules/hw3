@@ -8,8 +8,11 @@ all: llrec-test
 llrec-test: llrec-test.cpp llrec.cpp llrec.h
 	$(CXX) $(CXXFLAGS) llrec-test.cpp llrec.cpp -o $@
 
+stack-test: stack_test.cpp stack.h
+	$(CXX) $(CXXFLAGS) stack_test.cpp -o $@
+
 
 clean:
-	rm -f *.o rh llrec-test *~
+	rm -f *.o rh llrec-test stack-test *~
 
 .PHONY: clean 
